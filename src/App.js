@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Dome from "./demo";
+import ReactDOM from "react-dom";
+const user = {
+  age: 18,
+};
 
-function App() {
+const App = () => {
+  const addAge = e => {
+    console.log(e);
+    user.age += 1;
+    // this.setState({ value: e.user.age });
+    // console.log(user.age);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dome name="Nindle" age={user.age} />
+      <div id="age" onClick={addAge(user.age)}>
+        年龄增加器{user.age}
+      </div>
     </div>
   );
-}
-
+};
 export default App;
