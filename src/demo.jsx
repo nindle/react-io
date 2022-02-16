@@ -7,15 +7,16 @@ class Demo extends React.Component {
     this.state = {
       user: {
         age: 18
-      }
+      },
     }
     this.addAge = this.addAge.bind(this);
   }
   render () {
     const { user } = this.state
+    
     return (
       <div>
-        <h2>我叫{this.props.name.name}今年{user.age}岁了</h2>
+        <h2>{`我叫${this.props.name}今年${user.age}岁了`}</h2>
         <h3 onClick={this.addAge}>年龄增加器</h3>
         <img className="img" src={this.props.logo} alt="" />
       </div>

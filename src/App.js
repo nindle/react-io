@@ -6,9 +6,10 @@ const App = () => {
   const user = {
     name: 'Nindle',
   };
+
   return (
     <div className="App">
-      <Dome name={user} logo={logo} />
+      <Dome name={user.name} logo={logo} age={18} />
     </div>
   );
 };
