@@ -1,11 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Dome from "./demo";
+import logo from './logo.svg';
+import './App.css';
+import Dome from './demo';
 
 const App = () => {
+  const user = {
+    name: 'Nindle',
+  };
   return (
     <div className="App">
-      <Dome />
+      <Dome name={user} logo={logo} />
     </div>
   );
 };

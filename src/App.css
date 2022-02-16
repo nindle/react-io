@@ -8,9 +8,14 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .img {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.img {
+  width: 500px;
+  height: 500px;
 }
 
 .App-header {
