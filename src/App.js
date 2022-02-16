@@ -1,15 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Dome from './demo';
+import logo from "./logo.svg";
+import "./App.css";
+import Dome from "./demo";
 
 const App = () => {
   const user = {
-    name: 'Nindle',
+    name: "Nindle",
+    logo: logo,
   };
 
   return (
     <div className="App">
-      <Dome name={user.name} logo={logo} age={18} />
+      <Dome {...user} />
     </div>
   );
 };

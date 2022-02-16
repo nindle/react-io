@@ -1,19 +1,22 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {
-        age: 18
-      },
-    }
-    this.addAge = this.addAge.bind(this);
+  state = {
+    user: { age: 18 }
+  }
+
+  //props类型校验
+  static propTypes = {
+    name: PropTypes.string.isRequired, //必传
+    age: PropTypes.number
+  }
+
+  static defaultProps = {
+    age: 18, //默认值
   }
   render () {
     const { user } = this.state
-    
     return (
       <div>
         <h2>{`我叫${this.props.name}今年${user.age}岁了`}</h2>
@@ -22,10 +25,11 @@ class Demo extends React.Component {
       </div>
     )
   }
-  addAge () {
-    this.setState(state=>({
-      user:{
-        age:state.user.age+=1
+
+  addAge = () => {
+    this.setState(state => ({
+      user: {
+        age: state.user.age += 1
       }
     }))
   }
