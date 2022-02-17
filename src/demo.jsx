@@ -39,6 +39,7 @@ class Demo extends React.Component {
 
   handleBlur = () => {
     alert(this.inputValue.value)
+    this.inputValue.value=''
   }
 }
 
