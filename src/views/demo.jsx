@@ -91,7 +91,7 @@ class Demo extends React.Component {
         <h3 onClick={this.addAge}>年龄增加器</h3>
         <h3 onClick={this.uninstall}>组件卸载</h3>
         {/* ref回调函数式 */}
-        <input ref={c => this.inputValue = c} onBlur={this.handleBlur} type="number" placeholder="失去焦点获取数据" />
+        <input className="input" ref={c => this.inputValue = c} onBlur={this.handleBlur} type="text" placeholder="失去焦点获取数据" />
         <img className="img" src={this.props.logo} alt="" />
       </div>
     )
@@ -111,7 +111,7 @@ class Demo extends React.Component {
 
   handleBlur = () => {
     this.setState({
-      user: { age: this.inputValue.value }
+      user: { age: Number(this.inputValue.value) }
     })
   }
 }
