@@ -26,50 +26,50 @@ class Demo extends React.Component {
   // 构造器
   constructor(props) {
     super(props)
-    console.log("构造器");
+    console.log("父构造器");
   }
   //挂载前调用
   componentWillMount () {
-    console.log('Count---挂载前调用');
+    console.log('父componentWillMount---挂载前调用');
   }
 
   //组件完毕调用
   componentDidMount () {
-    console.log('Count---组件完毕调用');
+    console.log('父componentDidMount---组件完毕调用');
   }
 
   //组件卸载时调用
   componentWillUnmount () {
-    console.log('Count---组件卸载时调用');
+    console.log('父componentWillUnmount---组件卸载时调用');
   }
 
   //组件更新的“阀门”
   shouldComponentUpdate () {
-    console.log('Count---组件更新的“阀门””');
+    console.log('父shouldComponentUpdate---组件更新的“阀门””');
     return true
   }
 
   //组件将要更新时调用
   componentWillUpdate () {
-    console.log('Count---组件将要更新时调用');
+    console.log('父componentWillUpdate---组件将要更新时调用');
   }
 
   //组件更新完毕调用
   componentDidUpdate () {
-    console.log('Count---组件更新完毕调用');
+    console.log('父componentDidUpdate---组件更新完毕调用');
   }
 
   //若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
-  static getDerivedStateFromProps (props, state) {
-    console.log('getDerivedStateFromProps', props, state);
-    return null
-  }
+  // static getDerivedStateFromProps (props, state) {
+  //   console.log('父getDerivedStateFromProps', props, state);
+  //   return null
+  // }
 
   //在更新之前获取快照
-  getSnapshotBeforeUpdate () {
-    console.log('getSnapshotBeforeUpdate');
-    return 'atguigu'
-  }
+  // getSnapshotBeforeUpdate () {
+  //   console.log('父getSnapshotBeforeUpdate');
+  //   return 'atguigu'
+  // }
 
   //props类型校验
   static propTypes = {
@@ -87,6 +87,7 @@ class Demo extends React.Component {
     return (
       <div className='content'>
         <h2>{`我叫${this.props.name}今年${user.age}岁了`}</h2>
+        <DemoData age={user.age} />
         <h3 onClick={this.addAge}>年龄增加器</h3>
         <h3 onClick={this.uninstall}>组件卸载</h3>
         {/* ref回调函数式 */}
@@ -109,10 +110,68 @@ class Demo extends React.Component {
   }
 
   handleBlur = () => {
-    alert(this.inputValue.value)
-    this.inputValue.value = ''
+    this.setState({
+      user: { age: this.inputValue.value }
+    })
   }
 }
 
+class DemoData extends React.Component {
+  // 构造器
+  constructor(props) {
+    super(props)
+    console.log("子构造器");
+  }
+  //挂载前调用
+  componentWillMount () {
+    console.log('子componentWillMount---挂载前调用');
+  }
+
+  //组件完毕调用
+  componentDidMount () {
+    console.log('子componentDidMount---组件完毕调用');
+  }
+
+  //组件卸载时调用
+  componentWillUnmount () {
+    console.log('子componentWillUnmount---组件卸载时调用');
+  }
+
+  //组件更新的“阀门”
+  shouldComponentUpdate () {
+    console.log('子shouldComponentUpdate---组件更新的“阀门””');
+    return true
+  }
+
+  //组件将要更新时调用
+  componentWillUpdate () {
+    console.log('子componentWillUpdate---组件将要更新时调用');
+  }
+
+  //组件更新完毕调用
+  componentDidUpdate () {
+    console.log('子componentDidUpdate---组件更新完毕调用');
+  }
+
+  //若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
+  // static getDerivedStateFromProps (props, state) {
+  //   console.log('子getDerivedStateFromProps', props, state);
+  //   return null
+  // }
+
+  //在更新之前获取快照
+  // getSnapshotBeforeUpdate () {
+  //   console.log('子getSnapshotBeforeUpdate');
+  //   return 'atguigu'
+  // }
+
+  render () {
+    return (
+      <div>
+        <h2> {`Nindle是我朋友，今年${this.props.age}岁了`}</h2>
+      </div>
+    )
+  }
+}
 
 export default Demo
