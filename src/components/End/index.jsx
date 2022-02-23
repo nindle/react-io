@@ -19,8 +19,8 @@ export default class End extends Component {
     //更新状态
     this.props.delete(newTodos);
   };
-  
-  render() {
+
+  render () {
     const { todos, todonum } = this.props;
     return (
       <div className="todo-footer">
@@ -32,7 +32,7 @@ export default class End extends Component {
           />
         </label>
         <span>
-          <span>已完成{todonum}</span> / 全部{todos.length}
+          <span>已完成 {todonum}</span> / 全部 {todos.length}
         </span>
         <button className="btn btn-danger show" onClick={this.deleteDoto}>
           清除已完成任务
