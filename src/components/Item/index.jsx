@@ -12,13 +12,13 @@ export default class Item extends Component {
     chenge(id, 'delete');
   };
 
-  render() {
+  render () {
     const { id, name, done } = this.props;
     return (
       <li>
         <label>
           <input type="checkbox" checked={done} onChange={this.onChecks} />
-          <span>{name}</span>
+          <span> {name}</span>
         </label>
         <button
           className={done ? 'btn btn-danger show' : 'btn btn-danger'}
