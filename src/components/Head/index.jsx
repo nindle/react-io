@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import './index.css';
 
@@ -17,6 +16,7 @@ export default class Head extends Component {
       e.target.value = '';
     }
   };
+  
   render() {
     return (
       <div className="todo-header">

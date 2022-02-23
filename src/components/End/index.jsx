@@ -10,6 +10,7 @@ export default class End extends Component {
       this.props.chenge(false);
     }
   };
+
   deleteDoto = () => {
     const { todos } = this.props;
     const newTodos = todos.filter(todoObj => {
@@ -18,6 +19,7 @@ export default class End extends Component {
     //更新状态
     this.props.delete(newTodos);
   };
+  
   render() {
     const { todos, todonum } = this.props;
     return (
