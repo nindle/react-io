@@ -61,12 +61,13 @@ export default class App extends Component {
     }
     this.footerUpdata();
   };
+
   deleteDotos = e => {
-    console.log(e);
-    this.setState({ todos: [...e] });
-    console.log(this.state.todos);
-    this.footerUpdata();
+    this.setState({ todos: e }, () => {
+      this.footerUpdata();
+    });
   };
+
   render() {
     const { todos, todonum } = this.state;
     return (

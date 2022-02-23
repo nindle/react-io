@@ -23,7 +23,11 @@ export default class End extends Component {
     return (
       <div className="todo-footer">
         <label>
-          <input type="checkbox" checked={todonum === todos.length} onChange={this.onChecks} />
+          <input
+            type="checkbox"
+            checked={todonum === todos.length && todos.length != 0}
+            onChange={this.onChecks}
+          />
         </label>
         <span>
           <span>已完成{todonum}</span> / 全部{todos.length}

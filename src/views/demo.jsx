@@ -21,41 +21,41 @@ class Demo extends React.Component {
                    一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
     */
   state = {
-    user: { age: 18 }
-  }
+    user: { age: 18 },
+  };
   // 构造器
   constructor(props) {
-    super(props)
-    console.log("父构造器");
+    super(props);
+    console.log('父构造器');
   }
   //挂载前调用
-  componentWillMount () {
+  componentWillMount() {
     console.log('父componentWillMount---挂载前调用');
   }
 
   //组件完毕调用
-  componentDidMount () {
+  componentDidMount() {
     console.log('父componentDidMount---组件完毕调用');
   }
 
   //组件卸载时调用
-  componentWillUnmount () {
+  componentWillUnmount() {
     console.log('父componentWillUnmount---组件卸载时调用');
   }
 
   //组件更新的“阀门”
-  shouldComponentUpdate () {
+  shouldComponentUpdate() {
     console.log('父shouldComponentUpdate---组件更新的“阀门””');
-    return true
+    return true;
   }
 
   //组件将要更新时调用
-  componentWillUpdate () {
+  componentWillUpdate() {
     console.log('父componentWillUpdate---组件将要更新时调用');
   }
 
   //组件更新完毕调用
-  componentDidUpdate () {
+  componentDidUpdate() {
     console.log('父componentDidUpdate---组件更新完毕调用');
   }
 
@@ -74,82 +74,88 @@ class Demo extends React.Component {
   //props类型校验
   static propTypes = {
     name: PropTypes.string.isRequired, //必传
-    age: PropTypes.number
-  }
+    age: PropTypes.number,
+  };
 
   //默认值
   static defaultProps = {
     age: 18,
-  }
+  };
 
-  render () {
-    const { user } = this.state
+  render() {
+    const { user } = this.state;
     return (
-      <div className='content'>
+      <div className="content">
         <h2>{`我叫${this.props.name}今年${user.age}岁了`}</h2>
         <DemoData age={user.age} />
         <h3 onClick={this.addAge}>年龄增加器</h3>
         <h3 onClick={this.uninstall}>组件卸载</h3>
         {/* ref回调函数式 */}
-        <input className="input" ref={c => this.inputValue = c} onBlur={this.handleBlur} type="text" placeholder="失去焦点获取数据" />
+        <input
+          className="input"
+          ref={c => (this.inputValue = c)}
+          onBlur={this.handleBlur}
+          type="text"
+          placeholder="失去焦点获取数据"
+        />
         <img className="img" src={this.props.logo} alt="" />
       </div>
-    )
+    );
   }
 
   addAge = () => {
     this.setState(state => ({
       user: {
-        age: state.user.age += 1
-      }
-    }))
-  }
+        age: (state.user.age += 1),
+      },
+    }));
+  };
 
   uninstall = () => {
-    ReactDOM.unmountComponentAtNode(document.getElementById('root'))
-  }
+    ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+  };
 
   handleBlur = () => {
     this.setState({
-      user: { age: Number(this.inputValue.value) }
-    })
-  }
+      user: { age: Number(this.inputValue.value) },
+    });
+  };
 }
 
 class DemoData extends React.Component {
   // 构造器
   constructor(props) {
-    super(props)
-    console.log("子构造器");
+    super(props);
+    console.log('子构造器');
   }
   //挂载前调用
-  componentWillMount () {
+  componentWillMount() {
     console.log('子componentWillMount---挂载前调用');
   }
 
   //组件完毕调用
-  componentDidMount () {
+  componentDidMount() {
     console.log('子componentDidMount---组件完毕调用');
   }
 
   //组件卸载时调用
-  componentWillUnmount () {
+  componentWillUnmount() {
     console.log('子componentWillUnmount---组件卸载时调用');
   }
 
   //组件更新的“阀门”
-  shouldComponentUpdate () {
+  shouldComponentUpdate() {
     console.log('子shouldComponentUpdate---组件更新的“阀门””');
-    return true
+    return true;
   }
 
   //组件将要更新时调用
-  componentWillUpdate () {
+  componentWillUpdate() {
     console.log('子componentWillUpdate---组件将要更新时调用');
   }
 
   //组件更新完毕调用
-  componentDidUpdate () {
+  componentDidUpdate() {
     console.log('子componentDidUpdate---组件更新完毕调用');
   }
 
@@ -165,13 +171,13 @@ class DemoData extends React.Component {
   //   return 'atguigu'
   // }
 
-  render () {
+  render() {
     return (
       <div>
         <h2> {`Nindle是我朋友，今年${this.props.age}岁了`}</h2>
       </div>
-    )
+    );
   }
 }
 
-export default Demo
+export default Demo;

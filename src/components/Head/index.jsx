@@ -4,20 +4,20 @@ import { nanoid } from 'nanoid';
 import './index.css';
 
 export default class Head extends Component {
-  onKeyDown = (e) => {
+  onKeyDown = e => {
     if (e.keyCode !== 13) {
-      return
-    } else {
+      return;
+    } else if (e.target.value.trim() !== '') {
       const item = {
         id: nanoid(),
         name: e.target.value,
-        done: false
-      }
+        done: false,
+      };
       this.props.chenge(item);
-      e.target.value = ''
+      e.target.value = '';
     }
-  }
-  render () {
+  };
+  render() {
     return (
       <div className="todo-header">
         <input
