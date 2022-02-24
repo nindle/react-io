@@ -20,14 +20,14 @@ export default class End extends Component {
     this.props.delete(newTodos);
   };
 
-  render () {
+  render() {
     const { todos, todonum } = this.props;
     return (
       <div className="todo-footer">
         <label>
           <input
             type="checkbox"
-            checked={todonum === todos.length && todos.length != 0}
+            checked={todonum === todos.length && todos.length !== 0}
             onChange={this.onChecks}
           />
         </label>

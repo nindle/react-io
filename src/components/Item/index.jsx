@@ -12,8 +12,8 @@ export default class Item extends Component {
     chenge(id, 'delete');
   };
 
-  render () {
-    const { id, name, done } = this.props;
+  render() {
+    const { name, done } = this.props;
     return (
       <li>
         <label>
