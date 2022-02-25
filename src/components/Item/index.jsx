@@ -21,7 +21,7 @@ export default class Item extends Component {
           <span> {name}</span>
         </label>
         <button
-          className={done ? 'btn btn-danger show' : 'btn btn-danger'}
+          className={done ? 'btn btn-danger  show' : 'btn btn-danger'}
           onClick={this.deleteTodo}
         >
           删除
