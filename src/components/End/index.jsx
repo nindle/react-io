@@ -22,6 +22,7 @@ export default class End extends Component {
 
   render() {
     const { todos, todonum } = this.props;
+
     return (
       <div className="todo-footer">
         <label>

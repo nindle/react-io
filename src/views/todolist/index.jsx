@@ -70,6 +70,7 @@ export default class App extends Component {
 
   render() {
     const { todos, todonum } = this.state;
+
     return (
       <div className="todo-container">
         <div className="todo-wrap">
