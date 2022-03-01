@@ -20,7 +20,7 @@ export default class End extends Component {
     this.props.delete(newTodos);
   };
 
-  render() {
+  render () {
     const { todos, todonum } = this.props;
 
     return (
