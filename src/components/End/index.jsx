@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.css';
+import './index.scss';
 
 export default class End extends Component {
   onChecks = () => {
