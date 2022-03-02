@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../../components/Head';
-import List from '../../components/List';
-import Footer from '../../components/End';
+import Header from '../../components/todolist/Head';
+import List from '../../components/todolist/List';
+import Footer from '../../components/todolist/End';
 import '../../assets/css/App.css';
 
 export default class App extends Component {
