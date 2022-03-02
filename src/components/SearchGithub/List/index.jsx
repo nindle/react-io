@@ -5,8 +5,8 @@ export default class List extends Component {
   render() {
     return (
       <div className="list">
-        {[1, 2, 3, 4, 5, 6].map(item => {
-          return <Item data={item} />;
+        {this.props.list.map((item, index) => {
+          return <Item data={item} key={index} />;
         })}
       </div>
     );

@@ -4,7 +4,8 @@ export default class Item extends Component {
   render() {
     return (
       <div className="item">
-        <img src={this.props.data} alt={this.props.data} />
+        <div>{this.props.data.title}</div>
+        <div>{this.props.data.raw_hot}</div>
       </div>
     );
   }

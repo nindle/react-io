@@ -2,7 +2,7 @@
 import "./assets/css/App.css";
 // import Dome from "./views/demo";
 // import Todolist from "./views/todolist";
-import SearchGithub from "./views/searchGithub";
+import WeiboHotSearch from "./views/WeiboHotSearch";
 
 const App = () => {
   // const user = {
@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <SearchGithub />
+      <WeiboHotSearch />
     </div>
   );
 };
