@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './index.scss';
 export default class Search extends Component {
-  // https://weibo.com/ajax/side/hotSearch
   search = type => {
     if (type === 'weibo') {
       axios.get(`/weibo/ajax/side/hotSearch`).then(
@@ -14,10 +13,8 @@ export default class Search extends Component {
         }
       );
     } else if (type === 'baidu') {
-      // http://s.api.enetapi.com/api/BaiduHotSearch?hot=rt&qty=30
       axios.post(`/baidu/api/BaiduHotSearch?hot=rt&qty=30`).then(
         response => {
-          // console.log(response.data.data.result);
           this.props.getNewsList(response.data.data.result, 'baidu');
         },
         error => {
@@ -31,6 +28,7 @@ export default class Search extends Component {
     return (
       <div className="search">
         <button
+          ref={c => (this.buttonref = c)}
           onClick={() => {
             this.search('weibo');
           }}
