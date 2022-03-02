@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import List from '../../components/SearchGithub/List';
-import Search from '../../components/SearchGithub/Search';
+import List from '../../components/WeiboHotSearch/List';
+import Search from '../../components/WeiboHotSearch/Search';
 import './index.scss';
 export default class WeiboHotSearch extends Component {
   state = {
