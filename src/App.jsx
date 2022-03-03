@@ -11,8 +11,8 @@ const App = () => {
       {/* 注册路由 */}
       <div>
         <Routes>
-          <Route path="/todolist" component={Todolist} />
-          <Route path="/weiboHotSearch" component={WeiboHotSearch} />
+          <Route path="/todolist" element={<Todolist />} />
+          <Route path="/weiboHotSearch" element={<WeiboHotSearch />} />
         </Routes>
       </div>
       <div>
