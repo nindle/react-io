@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PubSub from 'pubsub-js';
 import './index.scss';
 export default class Search extends Component {
-  search = type => {
+  // 获取数据
+  search = async type => {
     if (type === 'weibo') {
-      axios.get(`/weibo/ajax/side/hotSearch`).then(
-        response => {
-          this.props.getNewsList(response.data.data.realtime, 'weibo');
-        },
-        error => {
-          console.log(error);
-        }
-      );
+      const { data } = await axios.get(`/weibo/ajax/side/hotSearch`);
+      // 发布订阅消息
+      PubSub.publish('newsList', data.data.realtime);
     } else if (type === 'baidu') {
-      axios.post(`/baidu/api/BaiduHotSearch?hot=rt&qty=30`).then(
-        response => {
-          this.props.getNewsList(response.data.data.result, 'baidu');
-        },
-        error => {
-          console.log(error);
-        }
-      );
+      const { data } = await axios.post(`/baidu/api/BaiduHotSearch?hot=rt&qty=30`);
+      PubSub.publish('newsList', data.data.result);
     }
   };
 
