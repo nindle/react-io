@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 // import logo from "./assets/images/logo.svg";
 import "./assets/css/App.css";
 // import Dome from "./views/demo";
@@ -13,6 +13,8 @@ const App = () => {
         <Routes>
           <Route path="/todolist" element={<Todolist />} />
           <Route path="/weiboHotSearch" element={<WeiboHotSearch />} />
+          <Route path="/" element={<Navigate to="/todolist"  />} />
+
         </Routes>
       </div>
       <div>
