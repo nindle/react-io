@@ -1,18 +1,24 @@
+import { Routes, Route, Link } from 'react-router-dom';
 // import logo from "./assets/images/logo.svg";
 import "./assets/css/App.css";
 // import Dome from "./views/demo";
-// import Todolist from "./views/todolist";
+import Todolist from "./views/todolist";
 import WeiboHotSearch from "./views/WeiboHotSearch";
 
 const App = () => {
-  // const user = {
-  //   name: "Nindle",
-  //   logo: logo,
-  // };
-
   return (
     <div className="App">
-      <WeiboHotSearch />
+      {/* 注册路由 */}
+      <div>
+        <Routes>
+          <Route path="/todolist" component={Todolist} />
+          <Route path="/weiboHotSearch" component={WeiboHotSearch} />
+        </Routes>
+      </div>
+      <div>
+        <Link className="list-group-item" to="/todolist">Todolist</Link>
+        <Link className="list-group-item" to="/weiboHotSearch">WeiboHotSearch</Link>
+      </div>
     </div>
   );
 };
