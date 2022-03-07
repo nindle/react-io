@@ -15,6 +15,10 @@ export default class Search extends Component {
     }
   };
 
+  componentDidMount() {
+    this.search('weibo');
+  }
+
   render() {
     return (
       <div className="search">
