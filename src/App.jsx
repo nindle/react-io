@@ -24,7 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/todolist" />} />
           <Route path="/todolist" element={<Todolist />} />
-          <Route path="/demo" element={<Dome />} />
+          <Route path="/demo" element={<Dome name={'Nindle'}/>} />
           <Route path="/routeweibo" element={<WeiboHotSearch />} />
         </Routes>
       </div>
