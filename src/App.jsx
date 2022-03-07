@@ -1,6 +1,6 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 // import logo from "./assets/images/logo.svg";
-import './assets/css/App.css';
+import './assets/css/App.scss';
 // import Dome from "./views/demo";
 import Todolist from './views/todolist';
 import WeiboHotSearch from './views/WeiboHotSearch';
@@ -8,21 +8,21 @@ import WeiboHotSearch from './views/WeiboHotSearch';
 const App = () => {
   return (
     <div className="App">
-      {/* 注册路由 */}
-      <div>
-        <Routes>
-          <Route path="/todolist" element={<Todolist />} />
-          <Route path="/weiboHotSearch" element={<WeiboHotSearch />} />
-          <Route path="/" element={<Navigate to="/todolist" />} />
-        </Routes>
-      </div>
-      <div>
+      <div className="navigation">
         <Link className="list-group-item" to="/todolist">
-          Todolist{' '}
+          Todolist案例
         </Link>
-        <Link className="list-group-item" to="/weiboHotSearch">
-          WeiboHotSearch{' '}
+        <Link className="list-group-item" to="/routeweibo">
+          热搜接口案例
         </Link>
+      </div>
+      {/* 注册路由 */}
+      <div className="views">
+        <Routes>
+          <Route path="/" element={<Navigate to="/todolist" />} />
+          <Route path="/todolist" element={<Todolist />} />
+          <Route path="/routeweibo" element={<WeiboHotSearch />} />
+        </Routes>
       </div>
     </div>
   );

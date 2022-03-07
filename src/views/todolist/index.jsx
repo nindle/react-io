@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../components/todolist/Head';
 import List from '../../components/todolist/List';
 import Footer from '../../components/todolist/End';
-import '../../assets/css/App.css';
+import '../../assets/css/App.scss';
 
 export default class App extends Component {
   //初始化状态
