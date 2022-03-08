@@ -10,7 +10,7 @@ const App = () => {
         <NavLink className="list-group-item" to="/case">
           练习案例
         </NavLink>
-        <NavLink className="list-group-item" to="/demo">
+        <NavLink className="list-group-item" to={`/demo/Nindle`}>
           生命周期案例
         </NavLink>
       </div>

@@ -7,7 +7,7 @@ import { Navigate } from "react-router-dom";
 export default [
   {
     path: "/",
-    element: <Navigate to="/demo" />,
+    element: <Navigate to="/demo/Nindle" />,
   },
   {
     path: "/case",
@@ -28,7 +28,7 @@ export default [
     ],
   },
   {
-    path: "/demo",
-    element: <Demo name="Nindle" />,
+    path: "/demo/:name",
+    element: <Demo />,
   },
 ];
