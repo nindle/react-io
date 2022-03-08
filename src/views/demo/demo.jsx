@@ -29,33 +29,33 @@ class Demo extends React.Component {
     console.log('父构造器');
   }
   //挂载前调用
-  componentWillMount() {
-    console.log('父componentWillMount---挂载前调用');
-  }
+  // componentWillMount() {
+  //   console.log('父componentWillMount---挂载前调用');
+  // }
 
   //组件完毕调用
-  componentDidMount() {
+  componentDidMount () {
     console.log('父componentDidMount---组件完毕调用');
   }
 
   //组件卸载时调用
-  componentWillUnmount() {
+  componentWillUnmount () {
     console.log('父componentWillUnmount---组件卸载时调用');
   }
 
   //组件更新的“阀门”
-  shouldComponentUpdate() {
+  shouldComponentUpdate () {
     console.log('父shouldComponentUpdate---组件更新的“阀门””');
     return true;
   }
 
   //组件将要更新时调用
-  componentWillUpdate() {
-    console.log('父componentWillUpdate---组件将要更新时调用');
-  }
+  // componentWillUpdate () {
+  //   console.log('父componentWillUpdate---组件将要更新时调用');
+  // }
 
   //组件更新完毕调用
-  componentDidUpdate() {
+  componentDidUpdate () {
     console.log('父componentDidUpdate---组件更新完毕调用');
   }
 
@@ -82,7 +82,7 @@ class Demo extends React.Component {
     age: 18,
   };
 
-  render() {
+  render () {
     const { user } = this.state;
     return (
       <div className="content">
@@ -129,33 +129,33 @@ class DemoData extends React.Component {
     console.log('子构造器');
   }
   //挂载前调用
-  componentWillMount() {
-    console.log('子componentWillMount---挂载前调用');
-  }
+  // componentWillMount () {
+  //   console.log('子componentWillMount---挂载前调用');
+  // }
 
   //组件完毕调用
-  componentDidMount() {
+  componentDidMount () {
     console.log('子componentDidMount---组件完毕调用');
   }
 
   //组件卸载时调用
-  componentWillUnmount() {
+  componentWillUnmount () {
     console.log('子componentWillUnmount---组件卸载时调用');
   }
 
   //组件更新的“阀门”
-  shouldComponentUpdate() {
+  shouldComponentUpdate () {
     console.log('子shouldComponentUpdate---组件更新的“阀门””');
     return true;
   }
 
   //组件将要更新时调用
-  componentWillUpdate() {
-    console.log('子componentWillUpdate---组件将要更新时调用');
-  }
+  // componentWillUpdate () {
+  //   console.log('子componentWillUpdate---组件将要更新时调用');
+  // }
 
   //组件更新完毕调用
-  componentDidUpdate() {
+  componentDidUpdate () {
     console.log('子componentDidUpdate---组件更新完毕调用');
   }
 
@@ -171,7 +171,7 @@ class DemoData extends React.Component {
   //   return 'atguigu'
   // }
 
-  render() {
+  render () {
     return (
       <div>
         <h2> {`Nindle是我朋友，今年${this.props.age}岁了`}</h2>
