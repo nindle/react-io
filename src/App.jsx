@@ -1,4 +1,4 @@
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 // import logo from "./assets/images/logo.svg";
 import './assets/css/App.scss';
 import Dome from './views/demo';
@@ -9,15 +9,15 @@ const App = () => {
   return (
     <div className="App">
       <div className="navigation">
-        <Link className="list-group-item" to="/todolist">
+        <NavLink className="list-group-item" to="/todolist">
           Todolist案例
-        </Link>
-        <Link className="list-group-item" to="/routeweibo">
+        </NavLink>
+        <NavLink className="list-group-item" to="/routeweibo">
           热搜接口案例
-        </Link>
-        <Link className="list-group-item" to="/demo">
+        </NavLink>
+        <NavLink className="list-group-item" to="/demo">
           Demo案例
-        </Link>
+        </NavLink>
       </div>
       {/* 注册路由 */}
       <div className="views">
