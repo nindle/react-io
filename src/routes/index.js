@@ -37,13 +37,19 @@ export default [
   {
     path: "/paramsrouter/:name",
     element: <Params />,
-  },
-  {
-    path: "/searchrouter",
-    element: <Search />,
-  },
-  {
-    path: "/stateRouter",
-    element: <StateRouter />,
+    children: [
+      {
+        path: "",
+        element: <Navigate to="search?name=search" />,
+      },
+      {
+        path: "search",
+        element: <Search />,
+      },
+      {
+        path: "state",
+        element: <StateRouter />,
+      },
+    ],
   },
 ];
