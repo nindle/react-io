@@ -1,13 +1,15 @@
 import WeiboHotSearch from "../views/WeiboHotSearch";
 import Todolist from "../views/todolist";
 import Case from "../views/case";
+import Params from "../views/router/Params.jsx";
+import Search from "../views/router/Search.jsx";
 import Demo from "../views/demo/demo.jsx";
 import { Navigate } from "react-router-dom";
 
 export default [
   {
     path: "/",
-    element: <Navigate to="/demo/Nindle" />,
+    element: <Navigate to="/demo" />,
   },
   {
     path: "/case",
@@ -27,14 +29,16 @@ export default [
       },
     ],
   },
-  // {
-  //   path: "/demo/:name",
-  //   element: <Demo />,
-  // },
-
-  // useSearch写法,
   {
     path: "/demo",
-    element: <Demo />,
+    element: <Demo name="Nindle" />,
+  },
+  {
+    path: "/paramsrouter/:name",
+    element: <Params />,
+  },
+  {
+    path: "/searchrouter",
+    element: <Search />,
   },
 ];

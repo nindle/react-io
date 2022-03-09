@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useRoutes } from 'react-router-dom';
+import { NavLink, useRoutes } from 'react-router-dom';
 import './assets/css/App.scss';
 import routes from './routes/index'
 
@@ -11,14 +11,17 @@ const App = () => {
           练习案例
         </NavLink>
 
-        {/* <NavLink className="list-group-item" to={`/demo/Nindle`}>
-          生命周期案例
-        </NavLink> */}
-        {/* useSearch传值 */}
-        <NavLink className="list-group-item" to={`/demo?name=Nindle`}>
+        <NavLink className="list-group-item" to={`/demo`}>
           生命周期案例
         </NavLink>
 
+        <NavLink className="list-group-item" to={`/paramsrouter/ParamsNindle`}>
+          路由Params传参案例
+        </NavLink>
+
+        <NavLink className="list-group-item" to={`/searchrouter?name=SearchNindle`}>
+          路由Search传参案例
+        </NavLink>
       </div>
       {/* 注册路由 */}
       <div className="views">
