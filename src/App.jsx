@@ -22,6 +22,13 @@ const App = () => {
         <NavLink className="list-group-item" to={`/searchrouter?name=SearchNindle`}>
           路由Search传参案例
         </NavLink>
+
+        <NavLink className="list-group-item" to={`/StateRouter`} state={{
+          name: 'Nindle',
+          age: '18'
+        }}>
+          路由State传参案例
+        </NavLink>
       </div>
       {/* 注册路由 */}
       <div className="views">
