@@ -10,9 +10,15 @@ const App = () => {
         <NavLink className="list-group-item" to="/case">
           练习案例
         </NavLink>
-        <NavLink className="list-group-item" to={`/demo/Nindle`}>
+
+        {/* <NavLink className="list-group-item" to={`/demo/Nindle`}>
+          生命周期案例
+        </NavLink> */}
+        {/* useSearch传值 */}
+        <NavLink className="list-group-item" to={`/demo?name=Nindle`}>
           生命周期案例
         </NavLink>
+
       </div>
       {/* 注册路由 */}
       <div className="views">

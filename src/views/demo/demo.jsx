@@ -1,15 +1,18 @@
 // import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 
 import React from 'react'
 
+
+
 export default function Demo () {
   const { name } = useParams()
+  const [Search] = useSearchParams()
   return (
     <div className="content">
-      <h2>{`我叫${name}今年${18}岁了`}</h2>
+      <h2>{`我叫${name ?? Search.get('name')}今年${18}岁了`}</h2>
       {/* <DemoData age={user.age} />
       <h3 onClick={this.addAge}>年龄增加器</h3>
       <h3 onClick={this.uninstall}>组件卸载</h3> */}

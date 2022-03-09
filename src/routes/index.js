@@ -27,8 +27,14 @@ export default [
       },
     ],
   },
+  // {
+  //   path: "/demo/:name",
+  //   element: <Demo />,
+  // },
+
+  // useSearch写法,
   {
-    path: "/demo/:name",
+    path: "/demo",
     element: <Demo />,
   },
 ];
