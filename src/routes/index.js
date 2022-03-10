@@ -4,6 +4,7 @@ import Case from "../views/case";
 import Params from "../views/router/Params.jsx";
 import Search from "../views/router/Search.jsx";
 import StateRouter from "../views/router/State.jsx";
+import Routerjs from "../views/router/router.jsx";
 import Demo from "../views/demo/demo.jsx";
 import { Navigate } from "react-router-dom";
 
@@ -49,6 +50,10 @@ export default [
       {
         path: "state",
         element: <StateRouter />,
+      },
+      {
+        path: "routerjs",
+        element: <Routerjs />,
       },
     ],
   },
