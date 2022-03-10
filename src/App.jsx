@@ -16,7 +16,7 @@ const App = () => {
         </NavLink>
 
         <NavLink className="list-group-item" to={`/paramsrouter/ParamsNindle`}>
-          路由Params传参案例
+          路由案例
         </NavLink>
       </div>
       {/* 注册路由 */}
