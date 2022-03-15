@@ -18,6 +18,10 @@ const App = () => {
         <NavLink className="list-group-item" to={`/paramsrouter/ParamsNindle`}>
           路由案例
         </NavLink>
+
+        <NavLink className="list-group-item" to={`/redux`}>
+          redux案例
+        </NavLink>
       </div>
       {/* 注册路由 */}
       <div className="views">

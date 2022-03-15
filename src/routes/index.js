@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import WeiboHotSearch from "../views/WeiboHotSearch";
 import Todolist from "../views/todolist";
 import Case from "../views/case";
@@ -6,7 +7,7 @@ import Search from "../views/router/Search.jsx";
 import StateRouter from "../views/router/State.jsx";
 import Routerjs from "../views/router/router.jsx";
 import Demo from "../views/demo/demo.jsx";
-import { Navigate } from "react-router-dom";
+import Reduxhtml from "../views/reduxhtml";
 
 export default [
   {
@@ -56,5 +57,9 @@ export default [
         element: <Routerjs />,
       },
     ],
+  },
+  {
+    path: "/redux",
+    element: <Reduxhtml />,
   },
 ];
