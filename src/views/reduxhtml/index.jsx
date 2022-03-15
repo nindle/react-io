@@ -3,15 +3,15 @@ import store from '../../redux/store'
 import { addCount, removeCount } from '../../redux/count_action'
 
 export default class Reduxhtml extends Component {
-
+  // 加法
   add = () => {
     store.dispatch(addCount(1))
   }
-
+  // 减法
   remove = () => {
     store.dispatch(removeCount(1))
   }
-
+  // 监听redux状态
   componentDidMount () {
     store.subscribe(() => {
       this.setState({})
