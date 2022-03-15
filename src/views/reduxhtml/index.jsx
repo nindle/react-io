@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
+import { addCount, removeCount } from '../../redux/count_action'
 
 export default class Reduxhtml extends Component {
 
   add = () => {
-    store.dispatch({ type: 'add', data: 1 })
+    store.dispatch(addCount(1))
   }
 
   remove = () => {
-    store.dispatch({ type: 'remove', data: 1 })
+    store.dispatch(removeCount(1))
   }
 
   componentDidMount () {
