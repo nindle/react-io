@@ -11,6 +11,12 @@ export default class Reduxhtml extends Component {
     store.dispatch({ type: 'remove', data: 1 })
   }
 
+  componentDidMount () {
+    store.subscribe(() => {
+      this.setState({})
+    })
+  }
+
   render () {
     return (
       <div>
