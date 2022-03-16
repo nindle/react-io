@@ -31,6 +31,10 @@ export default class Reduxhtml extends Component {
 }
 
 export default connect(
-
+  state => ({ count: state }),
+  {
+    addCount,
+    removeCount
+  }
 )(Reduxhtml)
 
