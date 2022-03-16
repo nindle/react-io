@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import store from '../../redux/store'
 import { addCount, removeCount } from '../../redux/count_action'
+import './index.scss'
 
 export default class Reduxhtml extends Component {
   // 加法
@@ -25,7 +26,7 @@ export default class Reduxhtml extends Component {
         <h2>计算所得值：{store.getState()}</h2>
         <button onClick={this.add}>+1</button>
         <button onClick={this.remove}>-1</button>
-        <NavLink to={`reactRedux`}>React-redux写法案例</NavLink>
+        <NavLink className="react_redux" to={`reactRedux`}>React-redux写法案例</NavLink>
         <div>
           <Outlet />
         </div>
