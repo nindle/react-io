@@ -8,6 +8,7 @@ import StateRouter from "../views/router/State.jsx";
 import Routerjs from "../views/router/router.jsx";
 import Demo from "../views/demo/demo.jsx";
 import Reduxhtml from "../views/reduxhtml";
+import Reactredux from "../views/reduxhtml/react-redux";
 
 export default [
   {
@@ -61,5 +62,6 @@ export default [
   {
     path: "/redux",
     element: <Reduxhtml />,
+    children: [{ path: "reactRedux", element: <Reactredux /> }],
   },
 ];
