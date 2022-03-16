@@ -7,20 +7,11 @@ class Reduxhtml extends Component {
   // 加法
   add = () => {
     this.props.addCount(1)
-    // store.dispatch(addCount(1))
   }
   // 减法
   remove = () => {
     this.props.removeCount(1)
-
-    // store.dispatch(removeCount(1))
   }
-  // 监听redux状态
-  // componentDidMount () {
-  //   store.subscribe(() => {
-  //     this.setState({})
-  //   })
-  // }
 
   render () {
     return (
