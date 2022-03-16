@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import store from '../../redux/store'
 import { addCount, removeCount } from '../../redux/count_action'
 
@@ -28,3 +29,8 @@ export default class Reduxhtml extends Component {
     )
   }
 }
+
+export default connect(
+
+)(Reduxhtml)
+
