@@ -5,12 +5,7 @@ import './index.css';
 export default class List extends Component {
   changeShow = (id, e) => {
     if (e === 'delete') {
-      this.props.todos.forEach((todo, index, list) => {
-        if (id === todo.id) {
-          list.splice(index, 1);
-        }
-      });
-      this.props.chenge(this.props.todos);
+      this.props.del(id)
     } else if (e === 'checked') {
       this.props.todos.forEach(todo => {
         if (id === todo.id) {
@@ -21,7 +16,7 @@ export default class List extends Component {
     }
   };
 
-  render() {
+  render () {
     const { todos } = this.props;
     return (
       <ul className="todo-main">

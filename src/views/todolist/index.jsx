@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { addTodoItem, removeTodoItem } from '../../redux/actions/todolist'
 import Header from '../../components/todolist/Head';
 import List from '../../components/todolist/List';
 import Footer from '../../components/todolist/End';
 import '../../assets/css/App.scss';
 
-export default class App extends Component {
+class App extends Component {
   //初始化状态
   state = {
     todos: [
@@ -18,9 +20,7 @@ export default class App extends Component {
   };
 
   addTodo = e => {
-    const { todos } = this.state;
-    const newTodo = [e, ...todos];
-    this.setState({ todos: newTodo });
+    this.props.addTodoItem(e)
   };
 
   updataChecked = e => {
@@ -40,7 +40,7 @@ export default class App extends Component {
     this.setState({ todonum: newNum });
   };
 
-  componentDidMount() {
+  componentDidMount () {
     this.footerUpdata();
   }
 
@@ -68,16 +68,16 @@ export default class App extends Component {
     });
   };
 
-  render() {
-    const { todos, todonum } = this.state;
+  render () {
+    const { todonum } = this.state;
 
     return (
       <div className="todo-container">
         <div className="todo-wrap">
           <Header chenge={this.addTodo} />
-          <List todos={todos} chenge={this.updataChecked} />
+          <List todos={this.props.todolist} chenge={this.updataChecked} del={this.props.removeTodoItem} />
           <Footer
-            todos={todos}
+            todos={this.props.todolist}
             todonum={todonum}
             chenge={this.chengeFooter}
             delete={this.deleteDotos}
@@ -87,3 +87,11 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({ todolist: state.todolist }),
+  {
+    addTodoItem,
+    removeTodoItem
+  }
+)(App)

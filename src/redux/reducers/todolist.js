@@ -11,6 +11,10 @@ export default function count(oldValue = defaultTodoList, action) {
   switch (type) {
     case "add_TodoItem":
       return [data, ...oldValue];
+    case "remove_TodoItem":
+      return oldValue.filter(e => {
+        return e.id !== data;
+      });
     default:
       return oldValue;
   }

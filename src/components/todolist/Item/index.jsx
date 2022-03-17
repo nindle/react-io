@@ -12,7 +12,7 @@ export default class Item extends Component {
     chenge(id, 'delete');
   };
 
-  render() {
+  render () {
     const { name, done } = this.props;
     return (
       <li>
