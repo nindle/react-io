@@ -16,7 +16,7 @@ class Reduxhtml extends Component {
   render () {
     return (
       <div>
-        <h2>计算所得值：{this.props.count}</h2>
+        <h2>计算所得值：{store.getState()}</h2>
         <button onClick={this.add}>+1</button>
         <button onClick={this.remove}>-1</button>
       </div>
@@ -25,7 +25,7 @@ class Reduxhtml extends Component {
 }
 
 export default connect(
-  state => ({ count: state.count }),
+  state => ({ count: state }),
   {
     addCount,
     removeCount
