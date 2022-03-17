@@ -6,7 +6,7 @@ const defaultTodoList = [
   { id: "005", name: "逛街", done: false },
 ];
 
-export default function count(oldValue = defaultTodoList, action) {
+export default function todolist(oldValue = defaultTodoList, action) {
   const { type, data } = action;
   // 判断type类型
   switch (type) {
