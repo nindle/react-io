@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import store from '../../redux/store'
-import { addCount, removeCount } from '../../redux/actions/count'
+import { addCount, removeCount } from '../../redux/count_action'
 import './index.scss'
 
 export default class Reduxhtml extends Component {
