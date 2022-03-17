@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../../redux/store'
-import { addCount, removeCount } from '../../redux/count_action'
+import { addCount, removeCount } from '../../redux/actions/count'
 
 class Reduxhtml extends Component {
   // 加法
