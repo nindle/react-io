@@ -23,7 +23,7 @@ export default class Reduxhtml extends Component {
   render () {
     return (
       <div>
-        <h2>计算所得值：{store.getState()}</h2>
+        <h2>计算所得值：{store.getState().count}</h2>
         <button onClick={this.add}> +1 </button>
         <button onClick={this.remove}> -1 </button>
         <NavLink className="react_redux" to={`reactRedux`}>React-redux写法案例</NavLink>

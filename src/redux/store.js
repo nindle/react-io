@@ -1,4 +1,4 @@
 import { createStore } from "redux";
-import count from "./reducers/count.js";
+import reducer from "./reducers/index";
 
-export default createStore(count);
+export default createStore(reducer);
