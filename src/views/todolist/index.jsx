@@ -5,6 +5,7 @@ import {
   removeTodoItem,
   changeTodoItem,
   allTodoItem,
+  delAllTodoItem,
 } from '../../redux/actions/todolist';
 import Header from '../../components/todolist/Head';
 import List from '../../components/todolist/List';
@@ -48,7 +49,7 @@ class App extends Component {
             todos={this.props.todolist}
             todonum={`${this.footerUpdata(this.props.todolist)}`}
             chenge={this.props.allTodoItem}
-            delete={this.props.removeTodoItem}
+            delete={this.props.delAllTodoItem}
           />
         </div>
       </div>
@@ -61,4 +62,5 @@ export default connect(state => ({ todolist: state.todolist }), {
   removeTodoItem,
   changeTodoItem,
   allTodoItem,
+  delAllTodoItem,
 })(App);

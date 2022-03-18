@@ -12,12 +12,7 @@ export default class End extends Component {
   };
 
   deleteDoto = () => {
-    const { todos } = this.props;
-    const newTodos = todos.filter(todoObj => {
-      return !todoObj.done;
-    });
-    //更新状态
-    this.props.delete(newTodos);
+    this.props.delete();
   };
 
   render() {

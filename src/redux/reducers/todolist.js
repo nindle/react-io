@@ -37,19 +37,17 @@ export default function todolist (oldValue = defaultTodoList, action) {
       });
     // 全选
     case "all_TodoItem":
-      console.log(oldValue.map(e => {
-        return {
-          id: e.id,
-          name: e.name,
-          done: data
-        }
-      }));
       return oldValue.map(e => {
         return {
           id: e.id,
           name: e.name,
           done: data
         }
+      });
+    // 删除
+    case "del_all_TodoItem":
+      return oldValue.filter(e => {
+        return !e.done
       });
     default:
       return oldValue;
