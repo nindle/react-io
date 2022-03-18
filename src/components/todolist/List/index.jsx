@@ -7,13 +7,7 @@ export default class List extends Component {
     if (e === 'delete') {
       this.props.del(id);
     } else if (e === 'checked') {
-      console.log(this.props.chenge(id));
-      // this.props.todos.forEach(todo => {
-      //   if (id === todo.id) {
-      //     todo.done = !todo.done;
-      //   }
-      // });
-      // this.props.chenge(this.props.todos);
+      this.props.chenge(id);
     }
   };
 

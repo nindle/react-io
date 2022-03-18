@@ -5,7 +5,7 @@ const defaultTodoList = [
   { id: "004", name: "搬砖", done: false },
   { id: "005", name: "逛街", done: false },
 ];
-export default function count (oldValue = defaultTodoList, action) {
+export default function todolist (oldValue = defaultTodoList, action) {
   const { type, data } = action;
   // 判断type类型
   switch (type) {
@@ -19,6 +19,14 @@ export default function count (oldValue = defaultTodoList, action) {
       });
     // 选择
     case "change_TodoItem":
+      console.log(oldValue.map(e => {
+        return e.id === data ?
+          {
+            id: e.id,
+            name: e.name,
+            done: !e.done,
+          } : e
+      }));
       return oldValue.map(e => {
         return e.id === data ?
           {
@@ -26,6 +34,22 @@ export default function count (oldValue = defaultTodoList, action) {
             name: e.name,
             done: !e.done,
           } : e
+      });
+    // 全选
+    case "all_TodoItem":
+      console.log(oldValue.map(e => {
+        return {
+          id: e.id,
+          name: e.name,
+          done: data
+        }
+      }));
+      return oldValue.map(e => {
+        return {
+          id: e.id,
+          name: e.name,
+          done: data
+        }
       });
     default:
       return oldValue;
