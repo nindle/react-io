@@ -18,10 +18,6 @@ class App extends Component {
     todonum: 0,
   };
 
-  addTodo = e => {
-    this.props.addTodoItem(e);
-  };
-
   footerUpdata = arr => {
     //已完成的个数
     return arr.filter(e => {
@@ -35,11 +31,11 @@ class App extends Component {
     // });
   };
 
-  render() {
+  render () {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
-          <Header chenge={this.addTodo} />
+          <Header chenge={this.props.addTodoItem} />
           <List
             todos={this.props.todolist}
             chenge={this.props.changeTodoItem}
