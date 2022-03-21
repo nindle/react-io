@@ -18,19 +18,14 @@ class App extends Component {
     todonum: 0,
   };
 
+  // 计算已完成数量
   footerUpdata = arr => {
     return arr.filter(e => {
       return e.done === true;
     }).length;
   };
 
-  deleteDotos = e => {
-    // this.setState({ todos: e }, () => {
-    //   this.footerUpdata();
-    // });
-  };
-
-  render () {
+  render() {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
