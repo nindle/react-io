@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom';
 
 const Fun = () => {
@@ -29,13 +29,13 @@ const Fun = () => {
   }
 
   return (
-    <div>
+    <Fragment>
       <h2>{count}</h2>
       <input type="text" ref={inputRef} />
       <div onClick={onSetCount}>点我计算</div>
       <div onClick={onUninstall}>卸载组件</div>
       <div onClick={getInputValue}>拿输入框的值</div>
-    </div>
+    </Fragment>
   )
 }
 export default Fun
