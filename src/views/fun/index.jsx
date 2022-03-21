@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom';
-
+const MyContext = React.createContext()
+const { Provider, Consumer } = MyContext
 const Fun = () => {
   const [count, setCount] = React.useState(0)
   const inputRef = React.useRef()
@@ -35,7 +36,21 @@ const Fun = () => {
       <div onClick={onSetCount}>点我计算</div>
       <div onClick={onUninstall}>卸载组件</div>
       <div onClick={getInputValue}>拿输入框的值</div>
+      <Provider value={count}>
+        <B />
+      </Provider>
     </Fragment>
+  )
+}
+
+const B = () => {
+  return (
+    <div>
+      从上层组件获取数据：
+      <Consumer>
+        {value => `拿到的数据是${value}`}
+      </Consumer>
+    </div>
   )
 }
 export default Fun
