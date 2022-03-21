@@ -9,6 +9,7 @@ export default class Case extends Component {
         <div className='navcss'>
           <NavLink to='/case/todolist'>Todolist案例</NavLink>
           <NavLink to='/case/weiboHot'>WeiboHotSearch案例</NavLink>
+          <NavLink to='/case/fun'>函数组件案例</NavLink>
         </div>
 
         <div>

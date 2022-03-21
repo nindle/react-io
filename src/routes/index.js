@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import WeiboHotSearch from "../views/WeiboHotSearch";
 import Todolist from "../views/todolist";
+import Fun from "../views/fun";
 import Case from "../views/case";
 import Params from "../views/router/Params.jsx";
 import Search from "../views/router/Search.jsx";
@@ -30,6 +31,10 @@ export default [
       {
         path: "weiboHot",
         element: <WeiboHotSearch />,
+      },
+      {
+        path: "fun",
+        element: <Fun />,
       },
     ],
   },
