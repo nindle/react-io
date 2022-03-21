@@ -16,8 +16,8 @@ export default class Head extends Component {
       e.target.value = '';
     }
   };
-  
-  render() {
+
+  render () {
     return (
       <div className="todo-header">
         <input

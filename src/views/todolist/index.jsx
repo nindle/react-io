@@ -13,23 +13,28 @@ import Footer from '../../components/todolist/End';
 import '../../assets/css/App.scss';
 
 class App extends Component {
-  // 添加
-  addTodo = e => {
-    this.props.addTodoItem(e);
+  //初始化状态
+  state = {
+    todonum: 0,
   };
 
-  //已完成的个数
   footerUpdata = arr => {
     return arr.filter(e => {
       return e.done === true;
     }).length;
   };
 
-  render() {
+  deleteDotos = e => {
+    // this.setState({ todos: e }, () => {
+    //   this.footerUpdata();
+    // });
+  };
+
+  render () {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
-          <Header chenge={this.addTodo} />
+          <Header chenge={this.props.addTodoItem} />
           <List
             todos={this.props.todolist}
             chenge={this.props.changeTodoItem}
