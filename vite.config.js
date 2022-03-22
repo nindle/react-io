@@ -9,5 +9,19 @@ export default defineConfig({
         additionalData: `$injectedColor: orange;`
       }
     }
-  }
+  },
+  server: {
+    proxy: {
+      '/weibo': {
+        target: 'https://weibo.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/weibo/, '')
+      },
+      '/baidu': {
+        target: 'http://s.api.enetapi.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/baidu/, '')
+      },
+    }
+  },
 })
