@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@vitejs/plugin-react": "^1.2.0",
     "axios": "^0.26.0",
     "node-sass": "^4.14.1",
     "pubsub-js": "^1.9.4",
@@ -14,9 +15,12 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
-    "typescript": "^4.5.5"
+    "sass": "^1.49.9",
+    "typescript": "^4.5.5",
+    "vite": "^2.8.6"
   },
   "scripts": {
+    "dev": "vite --open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
