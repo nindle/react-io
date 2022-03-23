@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { nanoid } from 'nanoid';
 import './index.css';
 
-export default class Head extends Component {
+export default class Head extends PureComponent {
   onKeyDown = e => {
     if (e.keyCode !== 13) {
       return;

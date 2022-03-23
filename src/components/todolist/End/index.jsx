@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.scss';
 
-export default class End extends Component {
+export default class End extends PureComponent {
   onChecks = () => {
     const { todos, todonum } = this.props;
     if (todonum == todos.length) {
