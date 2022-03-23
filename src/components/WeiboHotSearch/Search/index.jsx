@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import axios from 'axios';
 import PubSub from 'pubsub-js';
 import './index.scss';
-export default class Search extends Component {
+export default class Search extends PureComponent {
   // 获取数据
   search = async type => {
     if (type === 'weibo') {
@@ -21,11 +21,11 @@ export default class Search extends Component {
     }
   };
 
-  componentDidMount() {
+  componentDidMount () {
     this.search('weibo');
   }
 
-  render() {
+  render () {
     return (
       <div className="search">
         <button
