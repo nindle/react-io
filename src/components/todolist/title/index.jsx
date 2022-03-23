@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class index extends Component {
+class index extends PureComponent {
   render () {
     return (
       <div>

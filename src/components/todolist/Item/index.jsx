@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 
-export default class Item extends Component {
+export default class Item extends PureComponent {
   onChecks = () => {
     const { id, chenge } = this.props;
     chenge(id, 'checked');

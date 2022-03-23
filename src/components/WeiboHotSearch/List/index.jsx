@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Item from './component/Item';
 import PubSub from 'pubsub-js';
 import './index.scss';
-export default class List extends Component {
+export default class List extends PureComponent {
   state = {
     newsList: [],
   };

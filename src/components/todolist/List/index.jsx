@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Item from '../Item';
 import './index.css';
 
-export default class List extends Component {
+export default class List extends PureComponent {
   changeShow = (id, e) => {
     if (e === 'delete') {
       this.props.del(id);
