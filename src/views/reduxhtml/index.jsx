@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import store from '../../redux/store'
 import { addCount, removeCount } from '../../redux/actions/count'
 import './index.scss'
 
-export default class Reduxhtml extends Component {
+export default class Reduxhtml extends PureComponent {
   // 加法
   add = () => {
     store.dispatch(addCount(1))

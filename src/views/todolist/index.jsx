@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import {
   addTodoItem,
@@ -12,7 +12,7 @@ import List from '../../components/todolist/List';
 import Footer from '../../components/todolist/End';
 import '../../assets/css/App.scss';
 
-class App extends Component {
+class App extends PureComponent {
   //初始化状态
   state = {
     todonum: 0,
@@ -25,7 +25,7 @@ class App extends Component {
     }).length;
   };
 
-  render() {
+  render () {
     return (
       <div className="todo-container">
         <div className="todo-wrap">

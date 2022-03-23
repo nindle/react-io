@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { addCount, removeCount } from '../../redux/actions/count'
 
-class Reduxhtml extends Component {
+class Reduxhtml extends PureComponent {
   // 加法
   add = () => {
     this.props.addCount(1)

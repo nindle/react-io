@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 
 import './index.scss'
-export default class Case extends Component {
+export default class Case extends PureComponent {
   render () {
     return (
       <div>
