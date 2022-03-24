@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 const MyContext = React.createContext()
 const { Provider, Consumer } = MyContext
 
-
 const Fun = () => {
   const [count, setCount] = React.useState(0)
   const inputRef = React.useRef()

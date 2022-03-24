@@ -2,16 +2,18 @@ import React from 'react'
 import './index.scss'
 import { nanoid } from 'nanoid';
 
+
 const Login = () => {
   if (sessionStorage.getItem('token')) return null
 
   const textNode = React.useRef()
   const password = React.useRef()
-
+  const State = React.useState()
   const submit = () => {
     sessionStorage.setItem('token', nanoid())
     textNode.current.value = ''
     password.current.value = ''
+    // console.log(props);
   }
 
   return (

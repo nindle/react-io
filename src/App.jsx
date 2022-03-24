@@ -1,10 +1,26 @@
+import React from 'react';
 import { NavLink, useRoutes } from 'react-router-dom';
 import './assets/css/App.scss';
 import routes from './routes/index'
 import Login from "../src/views/login";
+const MyContext = React.createContext()
+const { Provider, Consumer } = MyContext
 
 const App = () => {
   const element = useRoutes(routes)
+  const [token, setCount] = React.useState(null)
+
+  React.useEffect(() => {
+    setCount(token => sessionStorage.getItem('token'))
+    return () => {
+    }
+    // 写[]表示调用一次，不写每次更新都会调用，[]里面写值表示监听值的变化
+  }, [token])
+
+  const onChange = (e) => {
+    console.log(e);
+  }
+
   return (
     <div>
       {
@@ -31,7 +47,7 @@ const App = () => {
             <div className="views">
               {element}
             </div>
-          </div> : <Login />
+          </div> : <Provider value={onChange}> <Login /> </Provider>
       }
     </div>
   );
