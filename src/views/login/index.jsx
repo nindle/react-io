@@ -1,10 +1,10 @@
 import React from 'react'
-
+import './index.scss'
 const Login = () => {
   return (
-    <div>
-      <input type="text" placeholder='请输入账号' />
-      <input type="password" placeholder='请输入密码' />
+    <div className="login">
+      <div>账号: <input type="text" className="text" placeholder='请输入账号' /></div>
+      <div>密码: <input type="password" className="password" placeholder='请输入密码' /></div>
     </div>
   )
 }
