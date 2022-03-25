@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-
+import './index.scss'
 class Demo extends React.Component {
   /*
      1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
