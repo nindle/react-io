@@ -36,7 +36,7 @@ const Fun = () => {
       <input type="text" ref={inputRef} />
       <div onClick={onSetCount}>点我计算</div>
       <div onClick={onUninstall}>卸载组件</div>
-      <div onClick={getInputValue}>拿输入框的值</div>
+      <div onClick={getInputValue}>拿输入框的值 </div>
       <Provider value={count}>
         <B />
       </Provider>
