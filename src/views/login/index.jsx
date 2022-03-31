@@ -13,7 +13,7 @@ const Login = () => {
     sessionStorage.setItem('token', nanoid())
     textNode.current.value = ''
     password.current.value = ''
-    // console.log(props);
+    location.reload();
   }
 
   return (
