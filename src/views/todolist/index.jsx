@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import {
   addTodoItem,
@@ -12,40 +12,29 @@ import List from '../../components/todolist/List';
 import Footer from '../../components/todolist/End';
 import '../../assets/css/App.scss';
 
-class App extends PureComponent {
-  //初始化状态
-  state = {
-    todonum: 0,
-  };
-
+const App = props => {
   // 计算已完成数量
-  footerUpdata = arr => {
+  const footerUpdata = arr => {
     return arr.filter(e => {
       return e.done === true;
     }).length;
   };
 
-  render () {
-    return (
-      <div className="todo-container">
-        <div className="todo-wrap">
-          <Header chenge={this.props.addTodoItem} />
-          <List
-            todos={this.props.todolist}
-            chenge={this.props.changeTodoItem}
-            del={this.props.removeTodoItem}
-          />
-          <Footer
-            todos={this.props.todolist}
-            todonum={`${this.footerUpdata(this.props.todolist)}`}
-            chenge={this.props.allTodoItem}
-            delete={this.props.delAllTodoItem}
-          />
-        </div>
+  return (
+    <div className="todo-container">
+      <div className="todo-wrap">
+        <Header chenge={props.addTodoItem} />
+        <List todos={props.todolist} chenge={props.changeTodoItem} del={props.removeTodoItem} />
+        <Footer
+          todos={props.todolist}
+          todonum={`${footerUpdata(props.todolist)}`}
+          chenge={props.allTodoItem}
+          delete={props.delAllTodoItem}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default connect(state => ({ todolist: state.todolist }), {
   addTodoItem,
