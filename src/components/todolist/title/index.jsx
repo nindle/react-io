@@ -1,13 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-class index extends PureComponent {
-  render () {
-    return (
-      <div>
-
-      </div>
-    );
-  }
+export default function index() {
+  return <div>index</div>;
 }
-
-export default index;
