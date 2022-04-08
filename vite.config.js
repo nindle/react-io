@@ -6,15 +6,10 @@ export default defineConfig({
   server: {
     // 配置代理
     proxy: {
-      '/weibo': {
-        target: 'https://weibo.com',
+      '/v1': {
+        target: 'https://api.kit9.cn',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/weibo/, '')
-      },
-      '/baidu': {
-        target: 'http://s.api.enetapi.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/baidu/, '')
+        rewrite: (path) => path.replace(/^\/v1/, '')
       },
     }
   },

@@ -61,19 +61,15 @@ const Search = () => {
   // 获取数据
   const search = async type => {
     if (type === 'weibo') {
-      const { data } = await axios.get(`/weibo/ajax/side/hotSearch`);
+      const { data } = await axios.get(`/v1/api/weibohotsearch/`);
       // 发布订阅消息
-      PubSub.publish('newsList', data.data.realtime);
+      PubSub.publish('newsList', data.data);
     } else if (type === 'baidu') {
-      const { data } = await axios.post(`/baidu/api/BaiduHotSearch?hot=rt&qty=30`);
-      console.log(data);
+      const { data } = await axios.get(`/v1/api/baiduhotsearch/`);
       PubSub.publish('newsList', data.data);
     } else if (type === 'zhihu') {
-      const { data } = await axios.post(`/v1/metawords/v2/account/login`, {
-        email: 'gjhjiahao@163.com',
-        password: 'MTIzNDU2',
-      });
-      PubSub.publish('newsList', data.data.result);
+      const { data } = await axios.get(`/v1/api/zhihuhotsearch/`);
+      PubSub.publish('newsList', data.data);
     }
   };
 

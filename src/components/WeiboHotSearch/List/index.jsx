@@ -37,7 +37,15 @@ const List = () => {
 
   React.useEffect(() => {
     const token = PubSub.subscribe('newsList', (_, data) => {
-      setNewsList(data);
+      console.log(data);
+      const newList = data.map(e => {
+        return {
+          title: e?.title,
+          url: e?.link,
+          host: e?.heat,
+        };
+      });
+      setNewsList(newList);
     });
 
     return () => {
