@@ -1,72 +1,72 @@
-import { Navigate } from "react-router-dom";
-import WeiboHotSearch from "../views/WeiboHotSearch";
-import Todolist from "../views/todolist";
-import Fun from "../views/fun";
-import Case from "../views/case";
-import Params from "../views/router/Params.jsx";
-import Search from "../views/router/Search.jsx";
-import StateRouter from "../views/router/State.jsx";
-import Routerjs from "../views/router/router.jsx";
-import Demo from "../views/demo/demo.jsx";
-import Reduxhtml from "../views/reduxhtml";
-import Reactredux from "../views/reduxhtml/react-redux";
+import { Navigate } from 'react-router-dom';
+import HotSearch from '../views/HotSearch';
+import Todolist from '../views/todolist';
+import Fun from '../views/fun';
+import Case from '../views/case';
+import Params from '../views/router/Params.jsx';
+import Search from '../views/router/Search.jsx';
+import StateRouter from '../views/router/State.jsx';
+import Routerjs from '../views/router/router.jsx';
+import Demo from '../views/demo/demo.jsx';
+import Reduxhtml from '../views/reduxhtml';
+import Reactredux from '../views/reduxhtml/react-redux';
 
 export default [
   {
-    path: "/",
+    path: '/',
     element: <Navigate to="/demo" />,
   },
   {
-    path: "/case",
+    path: '/case',
     element: <Case />,
     children: [
       {
-        path: "",
+        path: '',
         element: <Navigate to="todolist" />,
       },
       {
-        path: "todolist",
+        path: 'todolist',
         element: <Todolist />,
       },
       {
-        path: "weiboHot",
-        element: <WeiboHotSearch />,
+        path: 'weiboHot',
+        element: <HotSearch />,
       },
       {
-        path: "fun",
+        path: 'fun',
         element: <Fun />,
       },
     ],
   },
   {
-    path: "/demo",
+    path: '/demo',
     element: <Demo name="Nindle" />,
   },
   {
-    path: "/paramsrouter/:name",
+    path: '/paramsrouter/:name',
     element: <Params />,
     children: [
       {
-        path: "",
+        path: '',
         element: <Navigate to="search?name=search" />,
       },
       {
-        path: "search",
+        path: 'search',
         element: <Search />,
       },
       {
-        path: "state",
+        path: 'state',
         element: <StateRouter />,
       },
       {
-        path: "routerjs",
+        path: 'routerjs',
         element: <Routerjs />,
       },
     ],
   },
   {
-    path: "/redux",
+    path: '/redux',
     element: <Reduxhtml />,
-    children: [{ path: "reactRedux", element: <Reactredux /> }],
+    children: [{ path: 'reactRedux', element: <Reactredux /> }],
   },
 ];
