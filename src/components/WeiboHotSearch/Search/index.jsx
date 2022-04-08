@@ -66,7 +66,8 @@ const Search = () => {
       PubSub.publish('newsList', data.data.realtime);
     } else if (type === 'baidu') {
       const { data } = await axios.post(`/baidu/api/BaiduHotSearch?hot=rt&qty=30`);
-      PubSub.publish('newsList', data.data.result);
+      console.log(data);
+      PubSub.publish('newsList', data.data);
     } else if (type === 'zhihu') {
       const { data } = await axios.post(`/v1/metawords/v2/account/login`, {
         email: 'gjhjiahao@163.com',
